@@ -1,4 +1,22 @@
 services:
+  mysql-db:
+    container_name: bizzan-mysql
+    image: library/mysql:5.7.29
+    platform: linux/amd64
+    restart: always
+    volumes:
+      - ./sql/my.conf:/etc/my.conf
+      - ./sql/init:/docker-entrypoint-initdb.d/
+      - ./sql/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: bizzan
+      MYSQL_LOWER_CASE_TABLE_NAMES: 1
+
   # 新增 Redis 服务
   redis:
     image: redis:7.0-alpine
