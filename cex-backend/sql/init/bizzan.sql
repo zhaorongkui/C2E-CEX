@@ -665,3 +665,32 @@ INSERT INTO `admin_role_permission` (`role_id`, `rule_id`) VALUES
 (1, 226),
 (1, 227);
 
+-- ----------------------------
+-- Records of admin_role_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `member_wallet_history`;
+CREATE TABLE `member_wallet_history` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL,
+  `coin_id` varchar(255) NOT NULL,
+  `before_balance` decimal(18,8) NOT NULL,
+  `after_balance` decimal(18,8) DEFAULT NULL,
+  `before_frozen_balance` decimal(18,8) DEFAULT '0.00000000',
+  `after_frozen_balance` decimal(18,8) DEFAULT '0.00000000',
+  `op_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1338 DEFAULT CHARSET=utf8;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+-- ----------------------------
+-- INIT WALLET & MEMBER
+-- ----------------------------
+INSERT INTO `member` (`id`,`ali_no`,`qr_code_url`,`appeal_success_times`,`appeal_times`,`application_time`,`avatar`,`bank`,`branch`,`card_no`,`certified_business_apply_time`,`certified_business_check_time`,`certified_business_status`,`email`,`first_level`,`google_date`,`google_key`,`google_state`,`id_number`,`inviter_id`,`jy_password`,`last_login_time`,`city`,`country`,`district`,`province`,`login_count`,`margin`,`member_level`,`mobile_phone`,`password`,`promotion_code`,`publish_advertise`,`real_name`,`real_name_status`,`registration_time`,`salt`,`second_level`,`sign_in_ability`,`status`,`super_partner`,`third_level`,`token`,`token_expire_time`,`transaction_status`,`transactions`,`username`,`qr_we_code_url`,`wechat`,`local`) VALUES (5,null,null,0,0,null,'https://bizzan.oss-cn-hangzhou.aliyuncs.com/defaultavatar.png',null,null,null,null,null,0,null,0,null,null,null,null,null,null,null,null,'中国',null,null,54,null,0,'13800138020','c0e03b366e431f458ffa41c1fd677107','0QG9',1,null,0,'2025-05-29 19:08:41','393834313732313239363839393331373736',0,b'1',0,'0',0,'40f932cb-a283-44b6-b028-3fc0690d3a34','2025-07-19 14:53:25',1,0,'hello',null,null,'中国');
+INSERT INTO `member` (`id`,`ali_no`,`qr_code_url`,`appeal_success_times`,`appeal_times`,`application_time`,`avatar`,`bank`,`branch`,`card_no`,`certified_business_apply_time`,`certified_business_check_time`,`certified_business_status`,`email`,`first_level`,`google_date`,`google_key`,`google_state`,`id_number`,`inviter_id`,`jy_password`,`last_login_time`,`city`,`country`,`district`,`province`,`login_count`,`margin`,`member_level`,`mobile_phone`,`password`,`promotion_code`,`publish_advertise`,`real_name`,`real_name_status`,`registration_time`,`salt`,`second_level`,`sign_in_ability`,`status`,`super_partner`,`third_level`,`token`,`token_expire_time`,`transaction_status`,`transactions`,`username`,`qr_we_code_url`,`wechat`,`local`) VALUES (21,null,null,0,0,null,'https://bizzan.oss-cn-hangzhou.aliyuncs.com/defaultavatar.png',null,null,null,null,null,0,null,0,null,null,null,null,null,null,null,null,'中国',null,null,1,null,0,'13800438021','84af8b31ce4cf001c20db543a2a5d35f','0Q3B',1,null,0,'2025-06-06 07:54:19','393836393031353233373133383838323536',0,b'1',0,'0',0,'15aad67a-7e78-4371-9ea3-d0a170f47e97','2025-06-13 08:25:54',1,0,'hello2',null,null,'中国');
+
+INSERT INTO `member_wallet` (`id`,`address`,`balance`,`frozen_balance`,`is_lock`,`member_id`,`to_released`,`version`,`coin_id`) VALUES (1,'0x1234567811',997361.0127100000000000,4036.0000000000000000,0,5,0.00000000,1,'USDT');
+INSERT INTO `member_wallet` (`id`,`address`,`balance`,`frozen_balance`,`is_lock`,`member_id`,`to_released`,`version`,`coin_id`) VALUES (2,'0x12345678',999697.2225200000000000,295.5300000000000000,0,5,0.00000000,1,'Bitcoin');
+INSERT INTO `member_wallet` (`id`,`address`,`balance`,`frozen_balance`,`is_lock`,`member_id`,`to_released`,`version`,`coin_id`) VALUES (3,'0x112321321',23213011.0000000000000000,2.0000000000000000,0,21,0.00000000,1,'USDT');
+INSERT INTO `member_wallet` (`id`,`address`,`balance`,`frozen_balance`,`is_lock`,`member_id`,`to_released`,`version`,`coin_id`) VALUES (4,'0x123213213',2321321324.9960000000000000,2.0000000000000000,0,21,0.00000000,1,'Bitcoin');
