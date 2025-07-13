@@ -12,9 +12,9 @@
 
 ## 启动命令
 
-1. 启动 项目根目录 运行
+1. 启动 后端目录(cex-backend) 运行
    docker compose up -d
-2. 停止 项目根目录 运行
+2. 停止 后端目录(cex-backend) 运行
    docker-compose down -v
 
 ## 补充说明
