@@ -173,7 +173,7 @@ public class CoinExchangeRate {
      * @throws UnirestException
      */
     
-    @Scheduled(cron = "0 */5 * * * *")
+   // @Scheduled(cron = "0 */5 * * * *")
     public void syncUsdtCnyPrice() throws UnirestException {
     	// 抹茶OTC接口
     	String url = "https://otc.mxc.com/api/coin/USDT/price";
@@ -229,7 +229,7 @@ public class CoinExchangeRate {
      * @throws UnirestException
      */
     
-    @Scheduled(cron = "0 */30 * * * *")
+   // @Scheduled(cron = "0 */30 * * * *")
     public void syncPrice() throws UnirestException {
     	
         String url = "http://web.juhe.cn:8080/finance/exchange/frate?key=444af6d32012064c4654cf87c30ce537";
