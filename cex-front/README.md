@@ -30,7 +30,7 @@ VUE_APP_EXCHANGE_API_URL = ''
 
 VUE_APP_MARKET_API_URL= ''
 
-微服务对应端口：
+**微服务对应端口：**
 
 UC：6001
 
@@ -38,7 +38,7 @@ EXCHANGE：6003
 
 MARKET：6004
 
-例：
+**例：**
 
 VUE_APP_UC_API_URL = 'http://{服务器IP地址}:6001'
 
