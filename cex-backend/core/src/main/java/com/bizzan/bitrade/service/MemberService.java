@@ -85,7 +85,7 @@ public class MemberService extends BaseService {
     public Member login(String username, String password) throws Exception {
         Member member = memberDao.findMemberByMobilePhoneOrEmail(username, username);
         if (member == null) {
-            throw new AuthenticationException("账号或密码错误");
+            throw new AuthenticationException("用户不存在，检查账号是否输入错误");
         } else if (!Md5.md5Digest(password + member.getSalt()).toLowerCase().equals(member.getPassword())) {
             throw new AuthenticationException("账号或密码错误");
         } else if (member.getStatus().equals(CommonStatus.ILLEGAL)) {
