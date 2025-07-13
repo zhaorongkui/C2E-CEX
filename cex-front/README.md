@@ -22,18 +22,26 @@
 
 生产环境配置: .env.production
 
-后台部署后配置以下三个环境变量，分别对应后台不同微服务的api
+**后台部署后配置以下三个环境变量，分别对应后台不同微服务的api**
 
 VUE_APP_UC_API_URL = ''
+
 VUE_APP_EXCHANGE_API_URL = ''
+
 VUE_APP_MARKET_API_URL= ''
 
 微服务对应端口：
+
 UC：6001
+
 EXCHANGE：6003
+
 MARKET：6004
 
 例：
+
 VUE_APP_UC_API_URL = 'http://{服务器IP地址}:6001'
+
 VUE_APP_EXCHANGE_API_URL = 'http://{服务器IP地址}:6003'
+
 VUE_APP_MARKET_API_URL = 'http://{服务器IP地址}:6004'
