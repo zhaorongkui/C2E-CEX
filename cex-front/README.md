@@ -18,8 +18,9 @@
 
 #### 服务器API配置
 
-开发环境配置.env.development
-生产环境配置.env.production
+开发环境配置: .env.development
+
+生产环境配置: .env.production
 
 后台部署后配置以下三个环境变量，分别对应后台不同微服务的api
 
