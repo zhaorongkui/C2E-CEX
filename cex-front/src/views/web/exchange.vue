@@ -1964,7 +1964,7 @@ export default {
         c: stompClient,
         d: that.baseCoinScale,
       })
-      stompClient.subscribe('/topic/market/thumb', function(msg) {
+      stompClient.subscribe('/topic/market/thumb', function(msg) { // .subscribe订阅消息
         var resp = JSON.parse(msg.body)
         if (that.currentCoin != null && that.currentCoin.symbol == resp.symbol) {
           that.currentCoin.close = resp.close
@@ -1979,7 +1979,7 @@ export default {
         }
       })
 
-      stompClient.subscribe('/topic/market/trade/' + that.currentCoin.symbol, function(msg) {
+      stompClient.subscribe('/topic/market/trade/' + that.currentCoin.symbol, function(msg) { // .subscribe订阅消息
         var resp = JSON.parse(msg.body)
         if (resp.length > 0) {
           for (var i = 0; i < resp.length; i++) {
