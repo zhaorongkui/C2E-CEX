@@ -6,7 +6,7 @@
 ## 前端启动说明
 安装npm包依赖
 
- `npm install` 或 `yarn install`
+ `npm install` 或 `yarn install` 或 `pnpm install`
 
 
 ## 启动命令
@@ -45,3 +45,7 @@ VUE_APP_UC_API_URL = 'http://{服务器IP地址}:6001'
 VUE_APP_EXCHANGE_API_URL = 'http://{服务器IP地址}:6003'
 
 VUE_APP_MARKET_API_URL = 'http://{服务器IP地址}:6004'
+
+初始账号、密码：
+账号：13800138001
+密码：12345678

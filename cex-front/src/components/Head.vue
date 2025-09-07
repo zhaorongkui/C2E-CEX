@@ -4,7 +4,7 @@
       <div class="container-fluid flex container-head">
         <div class="logo">
           <router-link to="/">
-            <b>X-Cex</b>
+            <b>C2E-Cex</b>
           </router-link>
         </div> 
         <div class="header-item-center warning-text">

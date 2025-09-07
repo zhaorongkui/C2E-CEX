@@ -268,7 +268,7 @@
                         <div class="ui-table-tr">
                           <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div>
                           <div class="ui-table-th col2">{{ $t('wtth4') }}({{ currentCoin.coin }})</div>
-                          <div class="ui-table-th col3">{{ $t('total') }}(USDT)</div>
+                          <div class="ui-table-th col3">{{ $t('total') }}(BTC)</div>
                         </div>
                       </div>
                       <div class="ui-table-body">
@@ -306,7 +306,7 @@
                         <div class="ui-table-tr">
                           <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div>
                           <div class="ui-table-th col2">{{ $t('wtth4') }}({{ currentCoin.coin }})</div>
-                          <div class="ui-table-th col3">{{ $t('total') }}(USDT)</div>
+                          <div class="ui-table-th col3">{{ $t('total') }}(BTC)</div>
                         </div>
                       </div>
                       <div class="ui-table-body">
@@ -342,7 +342,7 @@
                       <div class="ui-table-tr">
                         <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div>
                         <div class="ui-table-th col2">{{ $t('wtth4') }}({{ currentCoin.coin }})</div>
-                        <div class="ui-table-th col3">{{ $t('total') }}(USDT)</div>
+                        <div class="ui-table-th col3">{{ $t('total') }}(BTC)</div>
                       </div>
                     </div>
                     <div class="ui-table-body">
@@ -385,7 +385,7 @@
                       <div class="ui-table-tr">
                         <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div>
                         <div class="ui-table-th col2">{{ $t('wtth4') }}({{ currentCoin.coin }})</div>
-                        <div class="ui-table-th col3">{{ $t('total') }}(USDT)</div>
+                        <div class="ui-table-th col3">{{ $t('total') }}(BTC)</div>
                       </div>
                     </div>
                     <div class="ui-table-body">
