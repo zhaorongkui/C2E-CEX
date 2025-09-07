@@ -188,6 +188,7 @@
         <div class="ustandard-row ustandard-mb">
           <div class="ustandard-col1 flex_bd" :class="{ show: smCurrent == 1 }">
             <div class="u4-right handler">
+              <!-- K线、深度图切换两个按钮 -->
               <el-button type="text" :class="current == 1 ? 'el-button--active' : ''" @click="currentClick(1)">
                 {{ $t('echat1') }}
               </el-button>
@@ -217,6 +218,7 @@
                     {{ currentCoin.close | toFixed(baseCoinScale) }}
                   </div>
                 </div>
+                <!-- 24h涨跌、最高价、最低价、交易数量 -->
                 <div class="ustandard-head__bd">
                   <div class="u-item">
                     <div class="u-item__label">{{ $t('mth2') }}</div>
@@ -240,6 +242,7 @@
               </div>
             </div>
             <div class="u4-panel" v-show="current == 1">
+              <!-- k线图标 -->
               <div class="panel-body">
                 <div class="u4-box" style="padding-left:25px">
                   <div class="u4-line" style="height:574px;">
@@ -249,6 +252,7 @@
               </div>
             </div>
             <div class="u4-panel" v-show="current == 2">
+              <!-- 深度图标 -->
               <div class="depth-group flex">
                 <div class="depth flex_bd" id="depth" v-if="current == 2"></div>
                 <div class="depth flex_bd" id="depth2" v-if="current == 2"></div>
@@ -266,7 +270,8 @@
                     <div class="ui-table">
                       <div class="ui-table-head">
                         <div class="ui-table-tr">
-                          <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div>
+                          <!-- 价格(USDT)数量(BTC)合计(BTC) 卖出红色 列表右上-->
+                          <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div> 
                           <div class="ui-table-th col2">{{ $t('wtth4') }}({{ currentCoin.coin }})</div>
                           <div class="ui-table-th col3">{{ $t('total') }}(BTC)</div>
                         </div>
@@ -295,6 +300,7 @@
                           class="ui-table-subtitle"
                           :class="{ buy: currentCoin.change > 0, sell: currentCoin.change < 0 }"
                         >
+                        <!-- 带箭头的最高成交价 -->
                           {{ currentCoin.close }}
                           <i class="el-icon-top" v-if="currentCoin.change > 0"></i>
                           <i class="el-icon-bottom" v-else></i>
@@ -304,6 +310,7 @@
                     <div class="ui-table ui-table2">
                       <div class="ui-table-head">
                         <div class="ui-table-tr">
+                          <!-- 价格(USDT)数量(BTC)合计(BTC) 买入绿色 列表右上-->
                           <div class="ui-table-th col1">{{ $t('wth3') }}(USDT)</div>
                           <div class="ui-table-th col2">{{ $t('wtth4') }}({{ currentCoin.coin }})</div>
                           <div class="ui-table-th col3">{{ $t('total') }}(BTC)</div>
@@ -333,6 +340,7 @@
                     </div>
                   </div>
                 </el-tab-pane>
+                <!-- 买入的操作模块 -->
                 <el-tab-pane name="buy">
                   <span slot="label">
                     <img src="../../assets/photo/web/block2.png" alt="" />
@@ -376,6 +384,7 @@
                     </div>
                   </div>
                 </el-tab-pane>
+                <!-- 卖出的操作模块 -->
                 <el-tab-pane name="sell">
                   <span slot="label">
                     <img src="../../assets/photo/web/block3.png" alt="" />
@@ -424,6 +433,7 @@
           </div>
           <div class="ustandard-col3 " :class="{ show: smCurrent == 3 }">
             <div class="ustandard-table">
+              <!-- 右上角价格、数量、时间、 -->
               <el-table :data="tableData" style="width: 100%">
                 <el-table-column prop="price" :label="$t('wth3') + '(USDT)'" width="95">
                   <template slot-scope="scope">
@@ -452,6 +462,7 @@
             <div class="u3-panel" style="width: 100%;overflow: hidden;">
               <div class="u2-tab">
                 <el-tabs v-model="activeName3">
+                  <!-- 当前委托 -->
                   <el-tab-pane :label="$t('wTxt2')" name="first">
                     <div class="u3-table">
                       <el-table :data="order.content" style="width: 100%" height="270px">
@@ -514,6 +525,7 @@
                       </div>
                     </el-dialog>
                   </el-tab-pane>
+                  <!-- 历史委托 -->
                   <el-tab-pane :label="$t('hisTxt')" name="second">
                     <div class="u3-table">
                       <el-table :data="order2.content" style="width: 100%" height="270px">
@@ -560,6 +572,7 @@
             <div class="u2-panel">
               <div class="u2-content u2-tab">
                 <el-tabs v-model="activeName2">
+                  <!-- 限价tab切换操作模块 -->
                   <el-tab-pane :label="$t('dhTxt2')" name="first">
                     <div class="u2-body u2-row" style="padding-bottom: 0px;">
                       <el-row :gutter="20">
@@ -612,6 +625,7 @@
                             </el-form-item>
                             <el-form-item>
                               <div class="u2-step">
+                                <!-- 限价左侧步长 -->
                                 <div class="u2-step-inner">
                                   <el-slider
                                     v-model="form.buy.sliderBuyLimitPercent"
@@ -708,6 +722,7 @@
                             <el-form-item>
                               <div class="u2-step">
                                 <div class="u2-step-inner">
+                                  <!-- 限价右侧步长 -->
                                   <el-slider
                                     v-model="form.sell.sliderSellLimitPercent"
                                     :marks="marks"
@@ -753,6 +768,7 @@
                       </el-row>
                     </div>
                   </el-tab-pane>
+                <!-- 市价tab切换操作模块 -->
                   <el-tab-pane :label="$t('trTxt2')" name="second">
                     <div class="u2-body u2-row">
                       <el-row :gutter="20">
@@ -880,6 +896,7 @@
                   </el-tab-pane>
                 </el-tabs>
                 <div class="u2-content-mask" v-show="!isLogin">
+                  <!-- 登录模块 -->
                   <div class="u2-isLogin">
                     {{ $t('please') }}
                     <router-link to="/login">{{ $t('meun8') }}</router-link
@@ -891,6 +908,7 @@
           </div>
         </div>
         <div class="mb-foot-height">
+         <!-- 未知模块 -->
           <div class="mb-foot">
             <el-row :gutter="15">
               <el-col :span="12">
